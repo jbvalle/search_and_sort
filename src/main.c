@@ -28,11 +28,13 @@ void free_input(int **input){
 int main(void){
 
     int **input = (int **)malloc(3 * sizeof(int *));
-     
+    
+    //inputs are accessible through 
+    //input[0]...8, input[1]...16, input[2]...64
     randomizer_8_16_64(input);
     
     //Show array elements
-    show_input(input); 
+    //show_input(input); //To display remove Backslashes
     
     //Free input arrays
     free_input(input);
