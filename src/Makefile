@@ -19,13 +19,13 @@ SRCS := $(wildcard *.c)
 _OBJF := $(SRCS:%.c=%.o)
 OBJF  := $(patsubst %,$(ODIR)/%,$(_OBJF))
 
-_HEADERS := str2args.h
+_HEADERS := $(SRCS:%.c=%.h)
 HEADERS := $(patsubst %,$(IDIR)/%,$(_HEADERS))
 
 BINS := $(SRCS:%.c=%)
 TARGET := main
 
-#declare all Compilation and Linkerflags
+#declare all Compilation and Linkerflags:
 CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR)
 LFLAGS= -lm
 

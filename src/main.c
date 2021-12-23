@@ -34,7 +34,7 @@ int main(void){
     randomizer_8_16_64(input);
     
     //Show array elements
-    //show_input(input); //To display remove Backslashes
+    show_input(input); //To display remove Backslashes
     
     //Free input arrays
     free_input(input);
