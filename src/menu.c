@@ -1,8 +1,21 @@
 
+/** doxy.  
+ * @file menu.c
+ * 
+ * 
+ * 
+ */
 
 #include "../include/menu.h"
 
-menu_t mmenu[] = {'1', "Mergesort", '2', "Quicksort", '3', "Bubblesort", '4', "Insertionsort", 'M', "Show Menu", 'X', "Exit Program"};
+menu_t mmenu[] = {
+    {'1', "Mergesort"}, 
+    {'2', "Quicksort"},
+    {'3', "Bubblesort"}, 
+    {'4', "Insertionsort"},
+    {'M', "Show Menu"}, 
+    {'X', "Exit Program"}};
+
 
 /** Function delivers list of menu points */
 void show_menu() {
@@ -21,7 +34,7 @@ void parse_input() {
 	char input = 0;
 	while (1) {
 		input = getchar();
-		while (getchar() != '\n');  //delete input buffer
+		while ((getchar() != '\n')&&(getchar() != EOF));  //delete input buffer or if returned EOF in case of error 
 		switch (tolower(input)) {
 		case '1':
 			printf("Your choice: #%c\n", input);
@@ -55,17 +68,4 @@ void parse_input() {
 	} //end while
 }
 
-/** MAIN ROUTINE*************************************************************/
-int main(void) {
-    printf("\nProgram starting...\n");
-    show_menu();
 
-/* Example for debugging */
-if (D) {
-	printf("Debugging Test...");
-}
-	parse_input();
-    
-	//printf("Closing program...\n");
-    exit(EXIT_SUCCESS);
-} // end main
