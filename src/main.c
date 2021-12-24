@@ -1,10 +1,17 @@
+/** .  
+ * @file main.c
+ * for doxy
+ * 
+ * 
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include "../include/main.h"
+#include "../include/menu.h"
 #include "../include/randomizer_8_16_64.h"
 
-#define DEBUG 1
 
 void randomizer_debug(){
     
@@ -21,10 +28,17 @@ void randomizer_debug(){
     free_8_16_64(input);
 }
 
+int main(void) {
+    printf("\nProgram starting...\n");
+    show_menu();
 
-int main(void){
+    /** Just an Example for debugging */
+    #if DEBUG 
+	    printf("Debugging Test...\n");
+      //Gibt das Generierte Array aus
+      randomizer_debug();  
+    #endif
 
-    if(DEBUG)randomizer_debug();    
-    
-    return 0;
+	  parse_input();
+    exit(EXIT_SUCCESS);
 }
