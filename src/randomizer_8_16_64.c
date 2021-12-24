@@ -38,3 +38,26 @@ int randomizer_8_16_64(int **input){
     }   
     return 0;
 }
+
+void show_8_16_64(int **input){
+    
+    for(int i = 0, exp = 3; i < 3; i++){
+        
+        exp += i;
+        for(int j = 0; j < pow(2,exp);j++){
+            
+            printf("%d| %d: %d\n", i, j, *(input[i] + j));
+        }
+    } 
+}
+
+void free_8_16_64(int **input){
+
+    for(int i = 0; i < 3; i++){
+        
+        free(input[i]);
+    } 
+    free(input);
+}
+
+

@@ -4,29 +4,10 @@
 #include <math.h>
 #include "../include/randomizer_8_16_64.h"
 
-void show_input(int **input){
+#define DEBUG 1
+
+void randomizer_debug(){
     
-    for(int i = 0, exp = 3; i < 3; i++){
-        
-        exp += i;
-        for(int j = 0; j < pow(2,exp);j++){
-            
-            printf("%d| %d: %d\n", i, j, *(input[i] + j));
-        }
-    } 
-}
-
-void free_input(int **input){
-
-    for(int i = 0; i < 3; i++){
-        
-        free(input[i]);
-    } 
-    free(input);
-}
-
-int main(void){
-
     int **input = (int **)malloc(3 * sizeof(int *));
     
     //inputs are accessible through 
@@ -34,9 +15,16 @@ int main(void){
     randomizer_8_16_64(input);
     
     //Show array elements
-    show_input(input); //To display remove Backslashes
-    
+    show_8_16_64(input); //To display remove Backslashes
+        
     //Free input arrays
-    free_input(input);
+    free_8_16_64(input);
+}
+
+
+int main(void){
+
+    if(DEBUG)randomizer_debug();    
+    
     return 0;
 }
