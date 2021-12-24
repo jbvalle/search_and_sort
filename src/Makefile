@@ -15,7 +15,6 @@ IDIR=../includes/
 #declare Sources and Binaries
 SRCS := $(wildcard *.c)
 
-#_OBJF := $(SRCS:%.c=%.o)
 _OBJF := $(SRCS:%.c=%.o)
 OBJF  := $(patsubst %,$(ODIR)/%,$(_OBJF))
 
@@ -23,6 +22,7 @@ _HEADERS := $(SRCS:%.c=%.h)
 HEADERS := $(patsubst %,$(IDIR)/%,$(_HEADERS))
 
 BINS := $(SRCS:%.c=%)
+
 TARGET := main
 
 #declare all Compilation and Linkerflags:
@@ -30,7 +30,7 @@ CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR)
 LFLAGS= -lm
 
 #define the "all" target
-all: clean SHOW_README $(OBJF) $(TARGET) 
+all: clean SHOW_README $(OBJF) $(TARGET) RUN
 
 #target <- objectfiles
 $(TARGET): $(OBJF)
@@ -42,9 +42,13 @@ $(ODIR)/%.o: %.c
 #README
 SHOW_README:
 	@cat ../README.txt
+
+RUN:
+	@./main
+
 #clean target
 clean:
 	@echo Cleaning Up
-	@rm -rvf $(ODIR)/*.o *.exe ${BINS}
+	@rm -rvf $(ODIR)/*.o *.exe $(BINS)
 
 
