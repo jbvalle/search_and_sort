@@ -1,3 +1,9 @@
+/** .  
+ * @file randomizer_8_16_64.c
+ * for doxy
+ * 
+ * 
+ */
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
