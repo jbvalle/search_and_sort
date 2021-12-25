@@ -52,9 +52,11 @@ void show_8_16_64(int **input){
         exp += i;
         for(int j = 0; j < pow(2,exp);j++){
             
-            printf("\n");
-            if(j%14 == 0)for(int i = 0; (i < 14) && (i < pow(2,exp)); i++)printf("+------+");
-            printf("\n");
+            if(j%14 == 0){
+                printf("\n");
+                for(int i = 0; (i < 14) && (i < pow(2,exp)); i++)printf("+------+");
+                printf("\n");
+            }
             printf("|%6d|", *(input[i] + j));
         }
         printf("\n");
