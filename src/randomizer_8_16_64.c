@@ -9,6 +9,10 @@
 #include <time.h>
 #include <math.h>
 
+//STDOUT Color
+#define COLOR "\033[0;33m"
+#define RESET "\033[0m"
+
 int randomizer_8_16_64(int **input){
     //0. 2 ^ exp = 8, 16, 64
     //1. 2 ^ (3 + 0) = 8
@@ -45,15 +49,37 @@ int randomizer_8_16_64(int **input){
     return 0;
 }
 
-void show_8_16_64(int **input){
+void show_8_16_64(int **input, int max_cols){
     
+    int format_count;
+
     for(int i = 0, exp = 3; i < 3; i++){
         
         exp += i;
+       
+        //Array Bezeichnung
+        printf("\n\n  +---------------------+\n");
+        printf("  |%1d. Array with size %2d|\n", i + 1, (int)pow(2,exp));
+        printf("  +---------------------+\n");
+        //Displays arrays in 8 | 16 | 64 partitions with added formatting
         for(int j = 0; j < pow(2,exp);j++){
             
-            printf("%d| %d: %d\n", i, j, *(input[i] + j));
+            if(j % max_cols == 0){
+                printf("\n");
+                if(j > 0){
+                    for(int k = 0; k < max_cols; k++)printf("  +------+");
+                    printf("\n");
+                }
+                for(format_count = 0; (format_count < max_cols) && (format_count < pow(2,exp) - j); format_count++)printf("  +------+");
+                printf("\n");
+            }
+            
+            printf("  |");printf(COLOR);
+            printf("%6d",*(input[i] + j));printf(RESET);
+            printf("|");
         }
+        printf("\n");
+        for(int i = 0; i < format_count; i++)printf("  +------+");
     } 
 }
 
