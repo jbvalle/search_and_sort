@@ -22,7 +22,7 @@ void randomizer_debug(){
     randomizer_8_16_64(input);
     
     //Show array elements
-    show_8_16_64(input); //To display remove Backslashes
+    show_8_16_64(input, 10); //To display remove Backslashes
         
     //Free input arrays
     free_8_16_64(input);
