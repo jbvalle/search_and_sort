@@ -36,7 +36,7 @@ all: clean SHOW_README $(OBJF) $(TARGET) RUN
 $(TARGET): $(OBJF)
 	@$(CC) -o $@ $^ $(LFLAGS) $(CFLAGS)
 
-$(ODIR)/%.o: %.c
+$(ODIR)/%.o: %.c | obj
 	@$(CC) -c -o $@ $^ $(CFLAGS)
 
 #README
@@ -46,9 +46,10 @@ SHOW_README:
 RUN:
 	@./main
 
+obj:
+	@mkdir -p $@
+
 #clean target
 clean:
 	@echo Cleaning Up
 	@rm -rvf $(ODIR)/*.o *.exe $(BINS) $(ODIR)
-
-
