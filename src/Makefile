@@ -49,6 +49,6 @@ RUN:
 #clean target
 clean:
 	@echo Cleaning Up
-	@rm -rvf $(ODIR)/*.o *.exe $(BINS)
+	@rm -rvf $(ODIR)/*.o *.exe $(BINS) $(ODIR)
 
 
