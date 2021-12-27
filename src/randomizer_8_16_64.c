@@ -10,7 +10,7 @@
 #include <math.h>
 
 //STDOUT Color
-#define COLOR "\033[0;33m"
+#define COLOR "\033[0;93m"
 #define RESET "\033[0m"
 
 int randomizer_8_16_64(int **input){
