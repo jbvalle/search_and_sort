@@ -13,28 +13,8 @@
 #include "../include/randomizer_8_16_64.h"
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
+#include "../include/testing.h"
 
-void randomizer_debug(){
-    
-    int **input = (int **)malloc(3 * sizeof(int *));
-    //inputs are accessible through 
-    //input[0]...8, input[1]...16, input[2]...64
-    randomizer_8_16_64(input);
-
-    //Testing sort algorithm for all 3 array of 1.1 
-    //bubblesort(input, 8);
-    //bubblesort(input, 16);
-    //bubblesort(input, 64);
-    
-    insertionsort(input, 8);
-    insertionsort(input, 16);
-    insertionsort(input, 64);
-    //Show array elements
-    show_8_16_64(input, 10); //To display remove Backslashes
-        
-    //Free input arrays
-    free_8_16_64(input);
-}
 
 int main(void) {
     printf("\nProgram starting...\n");
@@ -44,9 +24,9 @@ int main(void) {
     #if DEBUG 
 	    printf("Debugging Test...\n");
         //Gibt das Generierte Array aus
-        randomizer_debug();  
+        testing();  
     #endif
 
-	parse_input();
+	//parse_input();
     exit(EXIT_SUCCESS);
 }
