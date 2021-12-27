@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include "../include/search_index.h"
 
-void bubblesort(int **random_array, int sizeof_array){
+void bubblesort(int **input, int sizeof_array){
 
   int index = search_index(sizeof_array);
 
@@ -19,11 +19,11 @@ void bubblesort(int **random_array, int sizeof_array){
 
     for (int j = 0; j < sizeof_array-1; j++) {
 
-      if (*(random_array[index] + j) > *(random_array[index] + (j + 1))){
+      if (*(input[index] + j) > *(input[index] + (j + 1))){
 
-        int initial_value_buffer = *(random_array[index] + j);
-        *(random_array[index] + j) = *(random_array[index] + (j + 1));
-        *(random_array[index] + (j + 1)) = initial_value_buffer;
+        int initial_value_buffer = *(input[index] + j);
+        *(input[index] + j) = *(input[index] + (j + 1));
+        *(input[index] + (j + 1)) = initial_value_buffer;
         allignment_flag = 1;
       }
     }

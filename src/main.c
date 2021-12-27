@@ -12,6 +12,7 @@
 #include "../include/menu.h"
 #include "../include/randomizer_8_16_64.h"
 #include "../include/bubblesort.h"
+#include "../include/insertionsort.h"
 
 void randomizer_debug(){
     
@@ -19,10 +20,15 @@ void randomizer_debug(){
     //inputs are accessible through 
     //input[0]...8, input[1]...16, input[2]...64
     randomizer_8_16_64(input);
+
     //Testing sort algorithm for all 3 array of 1.1 
-    bubblesort(input, 8);
-    bubblesort(input, 16);
-    bubblesort(input, 64);
+    //bubblesort(input, 8);
+    //bubblesort(input, 16);
+    //bubblesort(input, 64);
+    
+    insertionsort(input, 8);
+    insertionsort(input, 16);
+    insertionsort(input, 64);
     //Show array elements
     show_8_16_64(input, 10); //To display remove Backslashes
         
