@@ -1,11 +1,10 @@
-/** .  
+/** Header file for testing module.   
  * @file testing.h
- * for doxy
- * 
- * 
+ * Detailed description
  */
 #ifndef TESTING_H
 #define TESTING_H
 
 void testing();
+
 #endif

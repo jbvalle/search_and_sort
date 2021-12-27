@@ -1,8 +1,6 @@
-/** .
+/** Header file for insertionsort module. 
  * @file insertionsort.h
- * for doxy
- *
- *
+ * Detailed description
  */
 #ifndef INSERTIONSORT_H
 #define INSERTIONSORT_H

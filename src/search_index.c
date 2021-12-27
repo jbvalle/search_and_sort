@@ -1,8 +1,6 @@
-/** .
+/** Module for getting the index of arrays.
  * @file search_index.c
- * for doxy
- *
- *
+ * Detailed description
  */
 #include <stdio.h>
 #include <stdlib.h>

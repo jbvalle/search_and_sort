@@ -1,16 +1,10 @@
-/** .  
+/** Header file for menu module.  
  * @file menu.h
- * 
- * 
- * 
+ * Detailed description
  */
 
 #ifndef MENU_H
 #define MENU_H
-
-#include <stdio.h>
-#include <stdlib.h> // needed for function exit, dynamic memory mgmt
-#include <ctype.h> // needed for function tolower
 
 struct menu_s {
     char symbol; 
