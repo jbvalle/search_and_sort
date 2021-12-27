@@ -13,6 +13,7 @@
 #include "../include/randomizer_8_16_64.h"
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
+#include "../include/randomizer_pt.h"
 
 //STDOUT Color
 #define COLOR "\033[1;31m"
@@ -58,4 +59,16 @@ void testing(){
         
     //Free input arrays
     free_8_16_64(input);
+
+    //Create Random Numbers for performance test of array
+    //8 | 32  | 64 | 128 | .... etc
+    printf("\n\n");printf(COLOR);printf("+-------------------------------------------+\n");
+    printf(COLOR);printf("| Randomized Arrays for performance testing |\n");
+    printf(COLOR);printf("+-------------------------------------------+\n");printf(RESET);
+
+    int **input_pt = (int **)malloc(7 * sizeof(int*));
+
+    randomizer_pt(input_pt);
+    show_randomizer_pt(input_pt, 20);
+    free_pt(input_pt);
 }

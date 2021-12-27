@@ -1,13 +1,12 @@
 
-/** doxy.  
+/** Module for the program menu and steering of performed actions.  
  * @file menu.c
- * 
- * 
  * 
  */
 
 #include "../include/menu.h"
 
+/** Struct mmenu (main menu) for showing user options */
 menu_t mmenu[] = {
     {'1', "Mergesort"}, 
     {'2', "Quicksort"},
@@ -50,7 +49,7 @@ void parse_input() {
 		case '4': 
 			printf("Your choice: #%c\n", input);
 			break;
-            /* // check return value for errors
+            /** // check return value for errors
 			if (input == -1) {
 				break;
 			}

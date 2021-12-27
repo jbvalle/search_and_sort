@@ -1,8 +1,8 @@
-/** .  
- * @file randomizer_8_16_64.c
+/** .
+ * @file randomizer_pt.c
  * for doxy
- * 
- * 
+ *
+ *
  */
 #include <stdlib.h>
 #include <stdio.h>
@@ -13,26 +13,32 @@
 #define COLOR "\033[0;93m"
 #define RESET "\033[0m"
 
-int randomizer_8_16_64(int **input){
-    //0. 2 ^ exp = 8, 16, 64
+//Randomizer PERFORMANCE TEST
+int randomizer_pt(int **input){
+    //0. 2 ^ exp = 8, 32, 128, etc.
     //1. 2 ^ (3 + 0) = 8
-    //2. 2 ^ (3 + 1) = 16
-    //3. 2 ^ (4 + 2) = 64
+    //2. 2 ^ (3 + 2) = 32
+    //3. 2 ^ (5 + 2) = 128
     if(input == NULL){
         perror("ERROR: NULL Pointer as Input Value");
         return 1;
     }
-
+    /*
     *input       = malloc(8 * sizeof(int));
     *(input + 1) = malloc(16 * sizeof(int));
-    *(input + 2) = malloc(64 * sizeof(int));
-
+    *(input + 2) = malloc(64 * sizeof(int));*/
+    for(int i = 0, exp = 1; i < 7; i++){
+        exp += 2;
+        *(input + i) = (int*)malloc(pow(2,exp) * sizeof(int));
+    }
+    
     //Plant rand() seed
     srand(time(NULL));
+    
     //Assign unique randoms to each input array element
-    for(int i = 0, exp = 3; i < 3; i++){
+    for(int i = 0, exp = 1; i < 7; i++){
 
-        exp += i;
+        exp += 2;
         for(int j = 0; j < pow(2,exp);){
             
             //2 ^ 15 = 32768 | 2 ^ 16 = 65536
@@ -43,24 +49,26 @@ int randomizer_8_16_64(int **input){
                 if(*(input[i] + x) == random_num)break;
             }
             //No duplicates found assign random_num to array
-            if(x == j)*(input[i] + j++) = random_num;
+            if(x == j){
+                *(input[i] + j++) = random_num;
+            }
         }
     }   
     return 0;
 }
 
-void show_8_16_64(int **input, int max_cols){
+void show_randomizer_pt(int **input, int max_cols){
     
     int format_count;
 
-    for(int i = 0, exp = 3; i < 3; i++){
+    for(int i = 0, exp = 1; i < 7; i++){
         
-        exp += i;
+        exp += 2;
        
         //Array Bezeichnung
-        printf("\n\n  +---------------------+\n");
-        printf("  |%1d. Array with size %2d|\n", i + 1, (int)pow(2,exp));
-        printf("  +---------------------+\n");
+    printf("\n\n  +-----------------------------------+\n");
+        printf("  | %1d. Array with size %5d elements |\n", i + 1, (int)pow(2,exp));
+        printf("  +-----------------------------------+\n");
         //Displays arrays in 8 | 16 | 64 partitions with added formatting
         for(int j = 0; j < pow(2,exp);j++){
             
@@ -83,7 +91,7 @@ void show_8_16_64(int **input, int max_cols){
     } 
 }
 
-void free_8_16_64(int **input){
+void free_pt(int **input){
 
     for(int i = 0; i < 3; i++){
         

@@ -2,6 +2,11 @@
 
 #declare Phony in Phony so incase a file has the same name
 #the phony will still be run
+
+#mark-up-var
+COLOR=\e[1;93m
+RESET=\e[0m
+
 .Phony = all clean
 
 #declare all variables
@@ -41,8 +46,9 @@ $(ODIR)/%.o: %.c | obj
 
 #README
 SHOW_README:
+	@echo "$(COLOR)"
 	@cat ../README.txt
-
+	@echo "$(RESET)"
 RUN:
 	@./main
 
