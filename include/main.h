@@ -45,6 +45,6 @@
  * 
  * the way to comment here also here a test for doxygen - very very first draft
    */
-#define DEBUG 1 //DEBUG_LEVEL
+#define DEBUG 0 //DEBUG_LEVEL
 
 #endif
