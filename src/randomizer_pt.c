@@ -93,7 +93,7 @@ void show_randomizer_pt(int **input, int max_cols){
 
 void free_pt(int **input){
 
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 7; i++){
         
         free(input[i]);
     } 
