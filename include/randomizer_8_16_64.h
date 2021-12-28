@@ -1,8 +1,6 @@
-/** .
+/** Header file for random numbers module. 
  * @file randomizer_8_16_64.h
- * for doxy
- *
- *
+ * Detailed description
  */
 #ifndef RANDOMIZER_8_16_64_H
 #define RANDOMIZER_8_16_64_H

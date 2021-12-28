@@ -1,9 +1,11 @@
 
 /** Module for the program menu and steering of performed actions.  
  * @file menu.c
- * 
  */
 
+#include <stdio.h>
+#include <stdlib.h> // needed for function exit, dynamic memory mgmt
+#include <ctype.h> // needed for function tolower
 #include "../include/menu.h"
 
 /** Struct mmenu (main menu) for showing user options */

@@ -1,8 +1,6 @@
-/** .
+/** Header file for index search module. 
  * @file search_index.h
- * for doxy
- *
- *
+ * Detailed description
  */
 #ifndef SEARCH_INDEX_H
 #define SEARCH_INDEX_H

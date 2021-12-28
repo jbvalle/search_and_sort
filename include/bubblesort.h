@@ -1,14 +1,12 @@
-/** .
+/** Header file for bubblesort module. 
  * @file bubblesort.h
- * for doxy
- *
- *
+ * Detailed description
  */
 
 #ifndef BUBBLESORT_H
 #define BUBBLESORT_H
 
 
-void bubblesort(int **random_array, int sizeof_array);
+void bubblesort(int **input, int sizeof_array);
 
 #endif

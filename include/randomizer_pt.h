@@ -1,8 +1,6 @@
-/** .
+/** Header file for performance test module. 
  * @file randomizer_pt.h
- * for doxy
- *
- *
+ * Detailed description
  */
 #ifndef RANDOMIZER_PT_H
 #define RANDOMIZER_PT_H

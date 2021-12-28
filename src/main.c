@@ -1,9 +1,8 @@
-/** .  
+/** Main module for the program.  
  * @file main.c
- * for doxy
- * 
- * 
+ * Detailed description
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
