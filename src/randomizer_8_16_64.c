@@ -36,7 +36,7 @@ int randomizer_8_16_64(int **input){
         for(int j = 0; j < pow(2,exp);){
             
             //2 ^ 15 = 32768 | 2 ^ 16 = 65536
-            int x, random_num = -pow(2,15) + rand()%(int)pow(2,16);
+            int x, random_num = -pow(2,15) + pow(2,16)*(rand()%(int)pow(2,15))/pow(2,15);
             //Check for duplicates, if found -> break and continue searching
             for(x = 0; x < j; x++){
 

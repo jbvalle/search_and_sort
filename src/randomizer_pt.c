@@ -42,16 +42,9 @@ int randomizer_pt(int **input){
         for(int j = 0; j < pow(2,exp);){
             
             //2 ^ 15 = 32768 | 2 ^ 16 = 65536
-            int x, random_num = -pow(2,15) + rand()%(int)pow(2,16);
-            //Check for duplicates, if found -> break and continue searching
-            for(x = 0; x < j; x++){
-
-                if(*(input[i] + x) == random_num)break;
-            }
-            //No duplicates found assign random_num to array
-            if(x == j){
-                *(input[i] + j++) = random_num;
-            }
+            int random_num = -32768 + 65536*(rand()%32768)/32768;
+        
+            *(input[i] + j++) = random_num;
         }
     }   
     return 0;
