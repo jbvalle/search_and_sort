@@ -42,12 +42,7 @@ int randomizer_pt(int **input){
         for(int j = 0; j < pow(2,exp);){
             
             //2 ^ 15 = 32768 | 2 ^ 16 = 65536
-<<<<<<< HEAD
-            int random_num = -32768 + 65536*rand()/RAND_MAX;
-
-=======
             int random_num = -32768 + 65536*(rand()/(RAND_MAX + 1.0));
->>>>>>> temp_branch
             *(input[i] + j++) = random_num;
         }
     }   
