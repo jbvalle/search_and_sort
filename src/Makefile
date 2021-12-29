@@ -31,7 +31,7 @@ BINS := $(SRCS:%.c=%)
 TARGET := main
 
 #declare all Compilation and Linkerflags:
-CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR)
+CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR)   #-std=c99
 LFLAGS= -lm
 
 #define the "all" target

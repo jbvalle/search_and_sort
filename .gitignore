@@ -4,3 +4,6 @@
 
 #ignore all executables
 *.exe
+
+#ignore any local settings
+.vscode/settings.json
