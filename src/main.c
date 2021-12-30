@@ -23,9 +23,9 @@ int main(void) {
     #if DEBUG 
 	    printf("Debugging Test...\n");
         //Gibt das Generierte Array aus
-        testing();  
+        //testing();  
     #endif
 
-	//parse_input();
+	parse_input();
     exit(EXIT_SUCCESS);
 }

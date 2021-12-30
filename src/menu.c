@@ -7,13 +7,16 @@
 #include <stdlib.h> // needed for function exit, dynamic memory mgmt
 #include <ctype.h> // needed for function tolower
 #include "../include/menu.h"
+#include "../include/testing.h"
 
 /** Struct mmenu (main menu) for showing user options */
 menu_t mmenu[] = {
-    {'1', "Mergesort"}, 
-    {'2', "Quicksort"},
-    {'3', "Bubblesort"}, 
-    {'4', "Insertionsort"},
+    {'1', "Basic implementation (1.1)"},
+	{'2', "Performance comparison (1.2)"},
+	{'3', "Mergesort"}, 
+    {'4', "Quicksort"},
+    {'5', "Bubblesort"}, 
+    {'6', "Insertionsort"},
     {'M', "Show Menu"}, 
     {'X', "Exit Program"}};
 
@@ -34,21 +37,29 @@ void show_menu() {
 void parse_input() {
 	char input = 0;
 	while (1) {
+		printf(">");
 		input = getchar();
 		while ((getchar() != '\n')&&(getchar() != EOF));  //delete input buffer or if returned EOF in case of error 
 		switch (tolower(input)) {
 		case '1':
+			printf("Your choice: #%c %s\n", input, mmenu[0].text);
+			testing();
+			break;
+		case '2': 
+			printf("Your choice: #%c %s\n", input, mmenu[1].text);
+			break;
+		case '3':
 			printf("Your choice: #%c\n", input);
             //result = msort(number_a, number_b);  //include functions here for sorting algorithms and outputs
             //printf("bla : %f\n", result);
 			break;
-		case '2': 
-			printf("Your choice: #%c\n", input);
-			break;
-		case '3': 
-			printf("Your choice: #%c\n", input);
-			break;
 		case '4': 
+			printf("Your choice: #%c\n", input);
+			break;
+		case '5': 
+			printf("Your choice: #%c\n", input);
+			break;
+		case '6': 
 			printf("Your choice: #%c\n", input);
 			break;
             /** // check return value for errors
