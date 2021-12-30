@@ -1,4 +1,4 @@
-/** .
+/** Mergesort Algorithm 
  * @file mergesort.h
  * for doxy
  *
@@ -43,7 +43,7 @@ void merge(int **input, int low, int mid, int high, int index) {
 }
 
 void mergeSort(int **input, int l, int r, int index){
-
+    
     if(l < r){
         int mid = (l + r)/2;
         mergeSort(input, l, mid, index);
