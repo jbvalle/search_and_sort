@@ -31,7 +31,7 @@ BINS := $(SRCS:%.c=%)
 TARGET := main
 
 #declare all Compilation and Linkerflags:
-CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR)
+CFLAGS = -g -Wall -Wextra -pedantic -std=c11 -I$(IDIR)
 LFLAGS= -lm
 
 #define the "all" target
@@ -39,21 +39,26 @@ all: clean SHOW_README $(OBJF) $(TARGET) RUN
 
 #target <- objectfiles
 $(TARGET): $(OBJF)
-	@$(CC) -o $@ $^ $(LFLAGS) $(CFLAGS)
+	@$(CC) $(CFLAGS) -DERR_FLAG=0 -o $@ $^ $(LFLAGS)
 
 $(ODIR)/%.o: %.c | obj
-	@$(CC) -c -o $@ $^ $(CFLAGS)
+	@$(CC) -DERR_FLAG=0 -c -o $@ $^ $(CFLAGS) 
 
 #README
 SHOW_README:
 	@echo "$(COLOR)"
 	@cat ../README.txt
 	@echo "$(RESET)"
+
 RUN:
 	@./main
 
 obj:
 	@mkdir -p $@
+
+check_err: $(SRCS)
+	@$(CC) $(CFLAGS) -DERR_FLAG=1 -o $(TARGET) $^ $(LFLAGS) 
+	@./main
 
 #clean target
 clean:
