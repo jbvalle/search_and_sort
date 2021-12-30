@@ -12,6 +12,7 @@
 #include "../include/randomizer_8_16_64.h"
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
+#include "../include/mergesort.h"
 #include "../include/testing.h"
 
 

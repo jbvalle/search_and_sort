@@ -15,7 +15,8 @@
 #include "../include/insertionsort.h"
 #include "../include/randomizer_pt.h"
 #include "../include/sortcheck.h"
-
+#include "../include/mergesort.h"
+#include "../include/search_index.h"
 //STDOUT Color
 #define COLOR "\033[1;31m"
 #define RESET "\033[0m"
@@ -69,6 +70,22 @@ void testing(){
     //Show array elements
     show_8_16_64(input, 10); //To display remove Backslashes
         
+
+    //-------------------------------------------------
+    //Mergesort
+    //Create Randomized Arrays
+    randomizer_8_16_64(input);
+    printf("\n\n");printf(COLOR);printf("+-------------------------+\n");
+    printf(COLOR);printf("|   Sorted by Mergesort   |\n");
+    printf(COLOR);printf("+-------------------------+\n");printf(RESET);
+    //Implement Mergesort
+    //1. generate Index for array size
+    //Call Mergesort function
+    mergeSort(input, 0, 7, search_index(8));
+    mergeSort(input, 0, 16, search_index(16));
+    mergeSort(input, 0, 64, search_index(64));
+    //Show array elements
+    show_8_16_64(input, 10);
     //Free input arrays
     free_8_16_64(input);
 
