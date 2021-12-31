@@ -31,7 +31,9 @@ BINS := $(SRCS:%.c=%)
 TARGET := main
 
 #declare all Compilation and Linkerflags:
-CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR)   #-std=c99
+CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR) -std=c99
+
+#libraries
 LFLAGS= -lm
 
 #define the "all" target
@@ -39,21 +41,29 @@ all: clean SHOW_README $(OBJF) $(TARGET) RUN
 
 #target <- objectfiles
 $(TARGET): $(OBJF)
-	@$(CC) -o $@ $^ $(LFLAGS) $(CFLAGS)
+	@$(CC) $(CFLAGS) -DERR_FLAG=0 -o $@ $^ $(LFLAGS)
 
 $(ODIR)/%.o: %.c | obj
-	@$(CC) -c -o $@ $^ $(CFLAGS)
+	@$(CC) -DERR_FLAG=0 -c -o $@ $^ $(CFLAGS) 
 
 #README
 SHOW_README:
 	@echo "$(COLOR)"
 	@cat ../README.txt
 	@echo "$(RESET)"
+
 RUN:
 	@./main
 
 obj:
 	@mkdir -p $@
+
+# --leak-check=full: "each individual leak will be shown in detail"
+# --show-leak-kinds=all: Show all of "definite, indirect, possible, reachable" leak kinds in the "full" report.
+# --track-origins=yes: Favor useful output over speed. This tracks the origins of uninitialized values
+# --verbose: Can tell you about unusual behavior of your program. Repeat for more verbosity.
+memleak: $(TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose $^
 
 #clean target
 clean:

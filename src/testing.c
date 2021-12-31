@@ -15,15 +15,18 @@
 #include "../include/insertionsort.h"
 #include "../include/randomizer_pt.h"
 #include "../include/sortcheck.h"
-
+#include "../include/mergesort.h"
+#include "../include/search_index.h"
 //STDOUT Color
 #define COLOR "\033[1;31m"
 #define RESET "\033[0m"
 
+//Error Checking macros
+
+
 void testing(){
     
     int **input = (int **)malloc(3 * sizeof(int *));
-    
     
     printf("\n\n");printf(COLOR);printf("+-------------------+\n");
     printf(COLOR);printf("| Randomized Arrays |\n");
@@ -42,16 +45,17 @@ void testing(){
     printf(COLOR);printf("+----------------------+\n");printf(RESET);
     //Testing sort algorithm for all 3 array of 1.1 
     bubblesort(input, 8);
-
-    **(input)=-1000;  //Added for testing purposes
-    if (sortcheck(input,8) != 0) {
-        printf(COLOR);printf("\nProblems in result of sorting algorithm found...\n\n");printf(RESET);
-        //exit(EXIT_SUCCESS);
-    };
+    #if ERR_FLAG 
+        **(input)=-1000;  //Added for testing purposes
+        if (sortcheck(input,8) != 0) {
+            printf(COLOR);printf("\nProblems in result of sorting algorithm found...\n\n");printf(RESET);
+            //exit(EXIT_SUCCESS);
+        }
+    #endif
     bubblesort(input, 16);
-    sortcheck(input,16);
+    //sortcheck(input,16);
     bubblesort(input, 64);
-    sortcheck(input,64);
+    //sortcheck(input,64);
     //Display
     show_8_16_64(input, 10); //To display remove Backslashes
 
@@ -66,6 +70,22 @@ void testing(){
     //Show array elements
     show_8_16_64(input, 10); //To display remove Backslashes
         
+
+    //-------------------------------------------------
+    //Mergesort
+    //Create Randomized Arrays
+    randomizer_8_16_64(input);
+    printf("\n\n");printf(COLOR);printf("+-------------------------+\n");
+    printf(COLOR);printf("|   Sorted by Mergesort   |\n");
+    printf(COLOR);printf("+-------------------------+\n");printf(RESET);
+    //Implement Mergesort
+    //1. generate Index for array size
+    //Call Mergesort function
+    mergeSort(input, 0, 7, search_index(8));
+    mergeSort(input, 0, 16, search_index(16));
+    mergeSort(input, 0, 64, search_index(64));
+    //Show array elements
+    show_8_16_64(input, 10);
     //Free input arrays
     free_8_16_64(input);
 
