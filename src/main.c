@@ -19,14 +19,7 @@
 int main(void) {
     printf("\nProgram starting...\n");
     show_menu();
-
-    /** Just an Example for debugging */
-    #if DEBUG 
-	    printf("Debugging Test...\n");
-        //Gibt das Generierte Array aus
-        //testing();  
-    #endif
-
 	parse_input();
+
     exit(EXIT_SUCCESS);
 }
