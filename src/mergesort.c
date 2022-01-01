@@ -40,6 +40,8 @@ void merge(int **input, int low, int mid, int high, int index) {
 
         *(input[index] + x) = temp[y++];
     }
+
+    free(temp);
 }
 
 void mergeSort(int **input, int l, int r, int index){

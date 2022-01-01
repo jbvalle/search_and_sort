@@ -86,8 +86,8 @@ void show_8_16_64(int **input, int max_cols){
 void free_8_16_64(int **input){
 
     for(int i = 0; i < 3; i++){
-        
-        free(input[i]);
+
+        free(input[i]);    
     } 
     free(input);
 }

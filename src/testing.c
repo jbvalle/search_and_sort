@@ -45,7 +45,7 @@ void testing(){
     printf(COLOR);printf("+----------------------+\n");printf(RESET);
     //Testing sort algorithm for all 3 array of 1.1 
     bubblesort(input, 8);
-    #if ERR_FLAG 
+    #if ERRFLAG 
         **(input)=-1000;  //Added for testing purposes
         if (sortcheck(input,8) != 0) {
             printf(COLOR);printf("\nProblems in result of sorting algorithm found...\n\n");printf(RESET);
@@ -81,11 +81,11 @@ void testing(){
     //Implement Mergesort
     //1. generate Index for array size
     //Call Mergesort function
-    mergeSort(input, 0, 7, search_index(8));
-    mergeSort(input, 0, 16, search_index(16));
-    mergeSort(input, 0, 64, search_index(64));
+    //mergeSort(input, 0, 7, search_index(8));
+    //mergeSort(input, 0, 15, search_index(16));
+    //mergeSort(input, 0, 63, search_index(64));
     //Show array elements
-    show_8_16_64(input, 10);
+    //show_8_16_64(input, 10);
     //Free input arrays
     free_8_16_64(input);
 
@@ -98,6 +98,6 @@ void testing(){
     int **input_pt = (int **)malloc(7 * sizeof(int*));
 
     randomizer_pt(input_pt);
-    show_randomizer_pt(input_pt, 20);
+    show_randomizer_pt(input_pt, 15);
     free_pt(input_pt);
 }

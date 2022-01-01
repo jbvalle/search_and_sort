@@ -41,10 +41,10 @@ all: clean SHOW_README $(OBJF) $(TARGET) RUN
 
 #target <- objectfiles
 $(TARGET): $(OBJF)
-	@$(CC) $(CFLAGS) -DERR_FLAG=0 -o $@ $^ $(LFLAGS)
+	@$(CC) $(CFLAGS) -DERRFLAG=0 -Dmemleak=0 -o $@ $^ $(LFLAGS)
 
 $(ODIR)/%.o: %.c | obj
-	@$(CC) -DERR_FLAG=0 -c -o $@ $^ $(CFLAGS) 
+	@$(CC) -DERRFLAG=0 -Dmemleak=0 -c -o $@ $^ $(CFLAGS) 
 
 #README
 SHOW_README:
@@ -52,20 +52,25 @@ SHOW_README:
 	@cat ../README.txt
 	@echo "$(RESET)"
 
-RUN:
-	@./main
+RUN: 
+	@./$(TARGET)
 
 obj:
 	@mkdir -p $@
 
 # --leak-check=full: "each individual leak will be shown in detail"
-# --show-leak-kinds=all: Show all of "definite, indirect, possible, reachable" leak kinds in the "full" report.
 # --track-origins=yes: Favor useful output over speed. This tracks the origins of uninitialized values
 # --verbose: Can tell you about unusual behavior of your program. Repeat for more verbosity.
-memleak: $(TARGET)
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose $^
+memleak_check: $(SRCS)
+	$(CC) $(CFLAGS) -Dmemleak=1 -o $(TARGET) $^ $(LFLAGS)
+	valgrind --leak-check=full  --tool=memcheck ./$(TARGET)
 
+#Setting ERRFLAG
+errsort: $(SRCS)
+	$(CC) $(CFLAGS) -DERRFLAG=1 -o $(TARGET) $^ $(LFLAGS)
+	./$(TARGET)
+	
 #clean target
 clean:
 	@echo Cleaning Up
-	@rm -rvf $(ODIR)/*.o *.exe $(BINS) $(ODIR)
+	@rm -rvf $(ODIR)/*.o *.exe $(BINS) $(ODIR) .*swo .*swp
