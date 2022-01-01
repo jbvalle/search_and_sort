@@ -23,9 +23,7 @@ int randomizer_8_16_64(int **input){
         return 1;
     }
 
-    *input       = malloc(8 * sizeof(int));
-    *(input + 1) = malloc(16 * sizeof(int));
-    *(input + 2) = malloc(64 * sizeof(int));
+    
 
     //Plant rand() seed
     srand(time(NULL));

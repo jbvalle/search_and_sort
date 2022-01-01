@@ -21,11 +21,11 @@ int main(void) {
     #if memleak
     testing();
     exit(EXIT_SUCCESS);
-    #endif
+    #else
     printf("\nProgram starting...\n");
     show_menu();
 	parse_input();
     exit(EXIT_SUCCESS);
-
+    #endif
     return 0;
 }

@@ -27,7 +27,10 @@
 void testing(){
     
     int **input = (int **)malloc(3 * sizeof(int *));
-    
+    *input       = malloc(8 * sizeof(int));
+    *(input + 1) = malloc(16 * sizeof(int));
+    *(input + 2) = malloc(64 * sizeof(int));
+
     printf("\n\n");printf(COLOR);printf("+-------------------+\n");
     printf(COLOR);printf("| Randomized Arrays |\n");
     printf(COLOR);printf("+-------------------+\n");printf(RESET);
@@ -37,7 +40,6 @@ void testing(){
     randomizer_8_16_64(input);
      //Show array elements
     show_8_16_64(input, 10); //To display remove Backslashes
-
     
     randomizer_8_16_64(input);
     printf("\n\n");printf(COLOR);printf("+----------------------+\n");
@@ -81,11 +83,11 @@ void testing(){
     //Implement Mergesort
     //1. generate Index for array size
     //Call Mergesort function
-    //mergeSort(input, 0, 7, search_index(8));
-    //mergeSort(input, 0, 15, search_index(16));
-    //mergeSort(input, 0, 63, search_index(64));
+    mergeSort(input, 0, 7, search_index(8));
+    mergeSort(input, 0, 15, search_index(16));
+    mergeSort(input, 0, 63, search_index(64));
     //Show array elements
-    //show_8_16_64(input, 10);
+    show_8_16_64(input, 10);
     //Free input arrays
     free_8_16_64(input);
 
