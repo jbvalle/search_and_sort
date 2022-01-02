@@ -31,7 +31,9 @@ BINS := $(SRCS:%.c=%)
 TARGET := main
 
 #declare all Compilation and Linkerflags:
-CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR)   #-std=c99
+CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR) -std=c99
+
+#libraries
 LFLAGS= -lm
 
 #define the "all" target
@@ -39,23 +41,36 @@ all: clean SHOW_README $(OBJF) $(TARGET) RUN
 
 #target <- objectfiles
 $(TARGET): $(OBJF)
-	@$(CC) -o $@ $^ $(LFLAGS) $(CFLAGS)
+	@$(CC) $(CFLAGS) -DERRFLAG=0 -Dmemleak=0 -o $@ $^ $(LFLAGS)
 
 $(ODIR)/%.o: %.c | obj
-	@$(CC) -c -o $@ $^ $(CFLAGS)
+	@$(CC) -DERRFLAG=0 -Dmemleak=0 -c -o $@ $^ $(CFLAGS) 
 
 #README
 SHOW_README:
 	@echo "$(COLOR)"
 	@cat ../README.txt
 	@echo "$(RESET)"
-RUN:
-	@./main
+
+RUN: 
+	@./$(TARGET)
 
 obj:
 	@mkdir -p $@
 
+# --leak-check=full: "each individual leak will be shown in detail"
+# --track-origins=yes: Favor useful output over speed. This tracks the origins of uninitialized values
+# --verbose: Can tell you about unusual behavior of your program. Repeat for more verbosity.
+memleak_check: $(SRCS)
+	$(CC) $(CFLAGS) -Dmemleak=1 -o $(TARGET) $^ $(LFLAGS)
+	valgrind --leak-check=full  --tool=memcheck ./$(TARGET)
+
+#Setting ERRFLAG
+errsort: $(SRCS)
+	$(CC) $(CFLAGS) -DERRFLAG=1 -o $(TARGET) $^ $(LFLAGS)
+	./$(TARGET)
+	
 #clean target
 clean:
 	@echo Cleaning Up
-	@rm -rvf $(ODIR)/*.o *.exe $(BINS) $(ODIR)
+	@rm -rvf $(ODIR)/*.o *.exe $(BINS) $(ODIR) .*swo .*swp

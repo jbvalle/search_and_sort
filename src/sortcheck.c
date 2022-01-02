@@ -18,7 +18,7 @@
 int sortcheck(int **input, int sizeof_array){
     int index = search_index(sizeof_array);
     printf("Start checking sequence for array with %i elements starting at address", sizeof_array);
-    printf(COLOR);printf(" %p\n", *input[index]);printf(RESET);
+    printf(COLOR);printf(" %p\n",(void*)input[index]);printf(RESET);
     for (int j = 0; j < sizeof_array-1; j++) {
 
         if (*(input[index] + j) > *(input[index] + (j + 1))){
@@ -32,6 +32,6 @@ int sortcheck(int **input, int sizeof_array){
             return(EXIT_FAILURE);
         }
     }
-    printf("Checking sequence finished successfully for");printf(COLOR);printf(" %p\n\n", *input[index]);printf(RESET);
+    printf("Checking sequence finished successfully for");printf(COLOR);printf(" %p\n\n",(void*) input[index]);printf(RESET);
     return(EXIT_SUCCESS);
 }

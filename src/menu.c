@@ -37,7 +37,7 @@ void show_menu() {
 void parse_input() {
 	char input = 0;
 	while (1) {
-		printf(">");
+		printf("\n>");
 		input = getchar();
 		while ((getchar() != '\n')&&(getchar() != EOF));  //delete input buffer or if returned EOF in case of error 
 		switch (tolower(input)) {

@@ -23,9 +23,7 @@ int randomizer_8_16_64(int **input){
         return 1;
     }
 
-    *input       = malloc(8 * sizeof(int));
-    *(input + 1) = malloc(16 * sizeof(int));
-    *(input + 2) = malloc(64 * sizeof(int));
+    
 
     //Plant rand() seed
     srand(time(NULL));
@@ -86,8 +84,8 @@ void show_8_16_64(int **input, int max_cols){
 void free_8_16_64(int **input){
 
     for(int i = 0; i < 3; i++){
-        
-        free(input[i]);
+
+        free(input[i]);    
     } 
     free(input);
 }

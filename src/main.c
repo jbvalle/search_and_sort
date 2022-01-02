@@ -12,20 +12,20 @@
 #include "../include/randomizer_8_16_64.h"
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
+#include "../include/mergesort.h"
 #include "../include/testing.h"
 
 
 int main(void) {
+    //Checking
+    #if memleak
+    testing();
+    exit(EXIT_SUCCESS);
+    #else
     printf("\nProgram starting...\n");
     show_menu();
-
-    /** Just an Example for debugging */
-    #if DEBUG 
-	    printf("Debugging Test...\n");
-        //Gibt das Generierte Array aus
-        //testing();  
-    #endif
-
 	parse_input();
     exit(EXIT_SUCCESS);
+    #endif
+    return 0;
 }
