@@ -41,7 +41,7 @@ all: clean SHOW_README $(OBJF) $(TARGET) RUN
 
 #target <- objectfiles
 $(TARGET): $(OBJF)
-	@$(CC) $(CFLAGS) -DERRFLAG=0 -Dmemleak=0 -o $@ $^ $(LFLAGS)
+	@$(CC) $(CFLAGS) -DERRFLAG=0 -Dmemleak=1 -o $@ $^ $(LFLAGS)
 
 $(ODIR)/%.o: %.c | obj
 	@$(CC) -DERRFLAG=0 -Dmemleak=0 -c -o $@ $^ $(CFLAGS) 
@@ -62,7 +62,7 @@ obj:
 # --track-origins=yes: Favor useful output over speed. This tracks the origins of uninitialized values
 # --verbose: Can tell you about unusual behavior of your program. Repeat for more verbosity.
 memleak_check: $(SRCS)
-	$(CC) $(CFLAGS) -Dmemleak=1 -o $(TARGET) $^ $(LFLAGS)
+	$(CC) $(CFLAGS) -Dmemleak=0 -o $(TARGET) $^ $(LFLAGS)
 	valgrind --leak-check=full  --tool=memcheck ./$(TARGET)
 
 #Setting ERRFLAG
@@ -70,6 +70,15 @@ errsort: $(SRCS)
 	$(CC) $(CFLAGS) -DERRFLAG=1 -o $(TARGET) $^ $(LFLAGS)
 	./$(TARGET)
 	
+testing: $(SRCS)
+	$(CC) $(CFLAGS) -Dmemleak=1 -o $(TARGET) $^ $(LFLAGS)
+	./$(TARGET)
+
+debug: $(SRCS)
+	ulimit -c unlimited
+	$(CC) $(CFLAGS) -Dmemleak=0 -o $(TARGET) $^ $(LFLAGS)
+	gdb ./$(TARGET) core
+
 #clean target
 clean:
 	@echo Cleaning Up
