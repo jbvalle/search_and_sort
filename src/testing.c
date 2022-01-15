@@ -17,6 +17,7 @@
 #include "../include/sortcheck.h"
 #include "../include/mergesort.h"
 #include "../include/search_index.h"
+#include "../include/quicksort.h"
 //STDOUT Color
 #define COLOR "\033[1;31m"
 #define RESET "\033[0m"
@@ -88,8 +89,25 @@ void testing(){
     mergeSort(input, 0, 63, search_index(64));
     //Show array elements
     show_8_16_64(input, 10);
+
+    //-------------------------------------------------
+    //Quicksort
+    //Create Randomized Arrays
+    randomizer_8_16_64(input);
+    printf("\n\n");printf(COLOR);printf("+-------------------------+\n");
+    printf(COLOR);printf("|   Sorted by Quicksort   |\n");
+    printf(COLOR);printf("+-------------------------+\n");printf(RESET);
+    //Implement Quicksort
+    //1. generate Index for array size
+    //Call Quicksort function
+    quicksort(input, 0, 7, search_index(8));
+    quicksort(input, 0, 15, search_index(16));
+    quicksort(input, 0, 63, search_index(64));
+    //Show array elements
+    show_8_16_64(input, 10);
     //Free input arrays
     free_8_16_64(input);
+
 
     //Create Random Numbers for performance test of array
     //8 | 32  | 64 | 128 | .... etc

@@ -14,6 +14,7 @@
 #include "../include/insertionsort.h"
 #include "../include/mergesort.h"
 #include "../include/testing.h"
+#include "../include/quicksort.h"
 
 
 int main(void) {
