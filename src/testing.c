@@ -97,9 +97,9 @@ void testing(){
     printf("\n\n");printf(COLOR);printf("+-------------------------+\n");
     printf(COLOR);printf("|   Sorted by Quicksort   |\n");
     printf(COLOR);printf("+-------------------------+\n");printf(RESET);
-    //Implement Mergesort
+    //Implement Quicksort
     //1. generate Index for array size
-    //Call Mergesort function
+    //Call Quicksort function
     quicksort(input, 0, 7, search_index(8));
     quicksort(input, 0, 15, search_index(16));
     quicksort(input, 0, 63, search_index(64));
