@@ -47,6 +47,7 @@ void parse_input() {
 			break;
 		case '2': 
 			printf("Your choice: #%c %s\n", input, mmenu[1].text);
+			perf_test();
 			break;
 		case '3':
 			printf("Your choice: #%c\n", input);

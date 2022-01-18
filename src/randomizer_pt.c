@@ -61,7 +61,7 @@ void show_randomizer_pt(int **input, int max_cols){
     printf("\n\n  +-----------------------------------+\n");
         printf("  | %1d. Array with size %5d elements |\n", i + 1, (int)pow(2,exp));
         printf("  +-----------------------------------+\n");
-        //Displays arrays in 8 | 16 | 64 partitions with added formatting
+        //Displays arrays in partitions with added formatting
         for(int j = 0; j < pow(2,exp);j++){
             
             if(j % max_cols == 0){
@@ -85,10 +85,10 @@ void show_randomizer_pt(int **input, int max_cols){
 
 void free_pt(int **input){
 
-    for(int i = 0; i < 7; i++){
+    /* for(int i = 0; i < 7; i++){
         
         free(input[i]);
-    } 
+    }  */
     free(input);
 }
 
