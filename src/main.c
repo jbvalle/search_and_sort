@@ -1,6 +1,7 @@
-/** Main module for the program.  
+/** @brief Main module for the program.  
  * @file main.c
- * Detailed description
+ * 
+ * Calls user menu on start. 
  */
 
 #include <stdio.h>
