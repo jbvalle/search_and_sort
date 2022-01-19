@@ -1,11 +1,17 @@
-/** Header file for menu module.  
+/** @brief Header file for menu module.  
  * @file menu.h
- * Detailed description
+ * 
  */
 
 #ifndef MENU_H
 #define MENU_H
 
+/** Struct @c menu.
+ *
+ * Defines a struct for the content of the menu.
+ * @param symbol  Number or Character to choose.
+ * @param text  Description of menu point.
+*/
 struct menu_s {
     char symbol; 
     char *text; 

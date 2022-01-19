@@ -1,6 +1,6 @@
-/** Header file for sortcheck module.
+/** @brief Header file for sortcheck module.
  * @file sortcheck.h
- * Detailed description
+ * 
  */
 
 #ifndef SORTCHECK_H

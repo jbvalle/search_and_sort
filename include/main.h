@@ -1,32 +1,32 @@
 
-/** Simple program "search and sort algorithms" realized.  
+/** @brief Simple program "search and sort algorithms" realized.  
  * @file main.h
  * 
  * 
  * @mainpage Search and sort algorithms 
  *  
- *  @section sec1 Introduction 
- *  This program written in C implements a well known sort and search algorithms. 
+ *  @section sec1 Overview 
+ *  This program written in C implements well known sort and search algorithms. 
+ *  The following algoritms are implemented:
+ *  -# Bubblesort 
+ *  -# Insertionsort
+ *  -# Mergesort
+ *  -# Quicksort
  * 
- *  @section sec2 Parts 
- *  The program can be splitted into the following parts.
+ *  @section sec2 Special features 
+ *  -# Menu
+ *  -# Colored output on @c stdout.
  * 
- *  @subsection sec2_1 Menu
  * 
- *  @subsection sec2_2 bla  
- *  @subsection sec2_3 bla
- *   
- *  @author Gelbmann_Kristo_Valle 
- *  @date 12.1.2021 
  *  
+ *  @author Gelbmann (ic21b066) / Kristo (ic21b067) / Valle (ic21b005)
+ *  @date 24.1.2021 
+ *  
+ *  @version 1.0 
+ *  Running version for parts 1.1, 1.2, 1.3, 1.4, 2.1
+ * 
  *  @version 0.9 
- *  Runs.
- * 
- *  @version 0.2 
- *  Deleted dead code. 
- * 
- *  @version 0.1 
- *  Added comments (Doxygen). 
+ *  Added comments (Doxygen).
  * 
  */
 
