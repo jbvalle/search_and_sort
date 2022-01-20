@@ -1,6 +1,5 @@
-/** .  
+/** @brief just for testing...
  * @file testing.c
- * for doxy
  * 
  * 
  */
@@ -8,23 +7,28 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <string.h>
 #include "../include/main.h"
 #include "../include/menu.h"
 #include "../include/randomizer_8_16_64.h"
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
-#include "../include/randomizer_pt.h"
 #include "../include/sortcheck.h"
 #include "../include/mergesort.h"
 #include "../include/search_index.h"
 #include "../include/quicksort.h"
-//STDOUT Color
+#include "../include/testing.h"
+
+/** @brief Define \c stdout Color */
 #define COLOR "\033[1;31m"
 #define RESET "\033[0m"
 
-//Error Checking macros
-
-
+/** @brief Function to create and call free dyn. memory as well as call subfunctions for performance test. 
+ * @param[in] arg1 First Array Element to be swapped
+ * @param[in] arg2 Second Array Element to be swapped
+ * @param[out] arg3 
+ * 
+ */
 void testing(){
     
     int **input = (int **)malloc(3 * sizeof(int *));
@@ -108,16 +112,4 @@ void testing(){
     //Free input arrays
     free_8_16_64(input);
 
-
-    //Create Random Numbers for performance test of array
-    //8 | 32  | 64 | 128 | .... etc
-    printf("\n\n");printf(COLOR);printf("+-------------------------------------------+\n");
-    printf(COLOR);printf("| Randomized Arrays for performance testing |\n");
-    printf(COLOR);printf("+-------------------------------------------+\n");printf(RESET);
-
-    int **input_pt = (int **)malloc(7 * sizeof(int*));
-
-    randomizer_pt(input_pt);
-    show_randomizer_pt(input_pt, 15);
-    free_pt(input_pt);
 }

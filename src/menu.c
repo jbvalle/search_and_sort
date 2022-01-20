@@ -1,5 +1,5 @@
 
-/** Module for the program menu and steering of performed actions.  
+/** @brief Module for the program menu and steering of performed actions.  
  * @file menu.c
  */
 
@@ -8,8 +8,9 @@
 #include <ctype.h> // needed for function tolower
 #include "../include/menu.h"
 #include "../include/testing.h"
+#include "../include/randomizer_pt.h"
 
-/** Struct mmenu (main menu) for showing user options */
+/** @brief Initializing struct mmenu (main menu) for showing user options */
 menu_t mmenu[] = {
     {'1', "Basic implementation (1.1)"},
 	{'2', "Performance comparison (1.2)"},
@@ -21,7 +22,7 @@ menu_t mmenu[] = {
     {'X', "Exit Program"}};
 
 
-/** Function delivers list of menu points */
+/** @brief Function delivers list of menu points */
 void show_menu() {
     int nr_menu_points = sizeof(mmenu)/sizeof(menu_t);
     printf("Please choose from the following options\n");
@@ -33,7 +34,7 @@ void show_menu() {
     printf("----------------------------------------\n");
 }
 
-/** Function parses user input on stdin */
+/** @brief Function parses user input (single characters) on @c stdin */
 void parse_input() {
 	char input = 0;
 	while (1) {
@@ -47,11 +48,10 @@ void parse_input() {
 			break;
 		case '2': 
 			printf("Your choice: #%c %s\n", input, mmenu[1].text);
+			perf_test();
 			break;
 		case '3':
 			printf("Your choice: #%c\n", input);
-            //result = msort(number_a, number_b);  //include functions here for sorting algorithms and outputs
-            //printf("bla : %f\n", result);
 			break;
 		case '4': 
 			printf("Your choice: #%c\n", input);
@@ -62,11 +62,6 @@ void parse_input() {
 		case '6': 
 			printf("Your choice: #%c\n", input);
 			break;
-            /** // check return value for errors
-			if (input == -1) {
-				break;
-			}
-			break; */
 		case 'm':
             show_menu();
             continue;
