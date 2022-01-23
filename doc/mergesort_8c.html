@@ -98,15 +98,15 @@ $(document).ready(function(){initNavTree('mergesort_8c.html',''); initResizable(
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7a6333ad72144819c7cb2d86e80c972a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mergesort_8c.html#a7a6333ad72144819c7cb2d86e80c972a">merge</a> (int **input, int low, int mid, int high, int index)</td></tr>
-<tr class="memdesc:a7a6333ad72144819c7cb2d86e80c972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function performs the merging part of mergesort.  <a href="mergesort_8c.html#a7a6333ad72144819c7cb2d86e80c972a">More...</a><br /></td></tr>
+<tr class="memdesc:a7a6333ad72144819c7cb2d86e80c972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function merge two sorted sets of arrays into one Array  <a href="mergesort_8c.html#a7a6333ad72144819c7cb2d86e80c972a">More...</a><br /></td></tr>
 <tr class="separator:a7a6333ad72144819c7cb2d86e80c972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72a6eb7e092d1bbf0ad4c5c604d0bca9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mergesort_8c.html#a72a6eb7e092d1bbf0ad4c5c604d0bca9">mergeSort</a> (int **input, int l, int r, int index)</td></tr>
-<tr class="memdesc:a72a6eb7e092d1bbf0ad4c5c604d0bca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursive function of merge sort.  <a href="mergesort_8c.html#a72a6eb7e092d1bbf0ad4c5c604d0bca9">More...</a><br /></td></tr>
+<tr class="memdesc:a72a6eb7e092d1bbf0ad4c5c604d0bca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function partitions an array and respectively sorts each array, subsequently merge sorting the array recursively.  <a href="mergesort_8c.html#a72a6eb7e092d1bbf0ad4c5c604d0bca9">More...</a><br /></td></tr>
 <tr class="separator:a72a6eb7e092d1bbf0ad4c5c604d0bca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Module for implementation of Mergesort algorithm. </p>
-<p >These functions perform the sorting algortihm for an array using merge sort. </p>
+<p >These functions perform the sorting of a randomized set of numbers using mergesort. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a7a6333ad72144819c7cb2d86e80c972a" name="a7a6333ad72144819c7cb2d86e80c972a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a6333ad72144819c7cb2d86e80c972a">&#9670;&nbsp;</a></span>merge()</h2>
@@ -152,14 +152,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This function performs the merging part of mergesort. </p>
+<p>this function merge two sorted sets of arrays into one Array </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>Array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">low</td><td>left partition of array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mid</td><td>Index of the split between left and right array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">high</td><td>right partition of array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of multidim. array</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>Randomized set of numbers stored in an Array of pointers </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">low</td><td>Represents the first element of the sorted array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mid</td><td>Represents the center element of a sorted array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">high</td><td>Represents the last element of a sorted Array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index is the Pointer within the double pointer which stores the address of the first element of an Array which is to be sorted</td></tr>
   </table>
   </dd>
 </dl>
@@ -205,13 +205,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Recursive function of merge sort. </p>
+<p>This function partitions an array and respectively sorts each array, subsequently merge sorting the array recursively. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>Array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">l</td><td>Begin of array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>End of array </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of multidim. array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>Randomized set of numbers stored in an Array of pointers </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">l</td><td>Represents the first element of the current array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>Represents the last element of the current array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index is the Pointer within the double pointer which stores the address of the first element of an Array which is to be sorted </td></tr>
   </table>
   </dd>
 </dl>
