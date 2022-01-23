@@ -1,29 +1,27 @@
-/**
+/** @brief This module applies the quicksort algorithm on randomized array
  *@file quicksort.c
- *This modules applies the quicksort algorithm on randomized array
+ *
  */
 
 #include<stdio.h>
 
-/**
- *@param[in] arg1 First Array Element to be swapped
- *@param[in] arg2 Second Array Element to be swapped
- *Switches Values of two Array Elements
+/** @brief Switches values of two array elements
+ *@param[in] arg1 First array element to be swapped
+ *@param[in] arg2 Second array element to be swapped
+ *
  */
 void swap(int *arg1, int *arg2){
-
     int temp = *arg1;
     *arg1 = *arg2;
     *arg2 = temp;
 }
 
-/**
+/** @brief Partitions an array of elements and sorts by comparing pivot element
  *@param[in] input Array
- *@param[in] start_index First Element in Partition
- *@param[in] end_index Last element in a Partition 
- *@param[in] input_index Index number of Array of pointer of randomized array
- *@param[out] pivot_index position of current Pivot
- *Paritions an Array of Elements and sorts by comparing pivot element
+ *@param[in] start_index First element in a partition
+ *@param[in] end_index Last element in a partition 
+ *@param[in] input_index Index number of array
+ *@param[out] pivot_index position of current pivot
  */
 int partition(int **input, int start_index, int end_index, int input_index){
 
@@ -44,12 +42,12 @@ int partition(int **input, int start_index, int end_index, int input_index){
     return pivot_index;
 }
 
-/**
+/** @brief Quicksorting algorithm by recursively partitioning and sorting an array
  *@param[in] input Array
- *@param[in] start_index First Element in Partition
- *@param[in] end_index Last element in a Partition 
- *@param[in] input_index Index number of Array of pointer of randomized array
- *Quicksorting Algorithm by recursively paritioning and sorting and Array
+ *@param[in] start_index First element in a partition
+ *@param[in] end_index Last element in a partition 
+ *@param[in] input_index Index number of array
+ *
  */
 void quicksort(int **input, int start_index, int end_index, int input_index){
 

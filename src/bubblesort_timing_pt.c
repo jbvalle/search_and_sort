@@ -1,8 +1,9 @@
-/**
+/** @brief This application performs a Runtime measurement assessment on bubblesort.
  *@file bubblesort_timing_pt.c 
- *@brief This application performs a Runtime measurement assessment on bubblesort.
- *It uses a randomized array of size 2000 and sorts it 20 times repeatedly using the same set of numbers. Each time measuring the CPU time for each Cycle. At the end displaying min, max, and avrg values
+ *
+ * It uses a randomized array of size 2000 and sorts it 20 times repeatedly using the same set of numbers. Each time measuring the CPU time for each cycle. At the end displaying min, max, and avrg values.
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -10,7 +11,7 @@
 
 /**
  *@brief This function performs a specialized sorting algortihm for an array of size 2000 using bubblesort
- *@param[in] input Input is the randomized array of size 2000
+ *@param[in] input Randomized array of size 2000
  */
 void bubblesort_pt(int *input)
 {
@@ -38,7 +39,8 @@ void bubblesort_pt(int *input)
 }
 
 /**
- *@brief This function performs 20x Cycles of bubblesort sorting on the same set of numbers, each time measuring the cpu time and outputting the measured values
+ *@brief This function performs 20 cycles of bubblesort sorting on the same set of numbers, each time measuring the cpu time and outputting the measured values
+ *@param[in] randomized Array to sort
  */
 void bubblesort_timing_pt(int *randomized){
 

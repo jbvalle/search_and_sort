@@ -1,3 +1,8 @@
+/** @brief Header file for mergesort module.  
+ * @file mergesort.h
+ * 
+ */
+
 #ifndef MERGESORT_H
 #define MERGESORT_H
 

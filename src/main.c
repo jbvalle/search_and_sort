@@ -1,6 +1,7 @@
-/** @brief Main module for the program.  
+/** @brief Main module for the program
  * @file main.c
  * 
+ * Simple program "search and sort algorithms" realized.
  * Calls user menu on start. 
  */
 
@@ -10,18 +11,20 @@
 #include <math.h>
 #include "../include/main.h"
 #include "../include/menu.h"
-#include "../include/randomizer_8_16_64.h"
-#include "../include/bubblesort.h"
-#include "../include/insertionsort.h"
-#include "../include/mergesort.h"
 #include "../include/testing.h"
-#include "../include/quicksort.h"
 
-
+/**
+ *@brief Starting point of program, showing the user menu after start.
+ *@param[out] status Success(0)/Fail(1)
+ * 
+ */
 int main(void) {
     //Checking
     #if memleak
-    testing();
+    bs();
+    is();
+    ms();
+    qs();
     exit(EXIT_SUCCESS);
     #else
     printf("\nProgram starting...\n");

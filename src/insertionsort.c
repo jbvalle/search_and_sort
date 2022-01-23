@@ -1,13 +1,17 @@
-/** .  
+/** @brief Module for the implementation of insertionsort algorithm.
  * @file insertionsort.c
- * for doxy
  * 
  * 
  */
 #include <stdio.h>
 #include "../include/search_index.h"
 
-
+/**
+ *@brief This function performs the sorting algortihm for an array using insertion sort.
+ *@param[in] input Array
+ *@param[in] sizeof_array Number of elements of array
+ *
+ */
 void insertionsort(int **input, int sizeof_array){
 
     int index = search_index(sizeof_array);

@@ -1,18 +1,26 @@
-/** .  
+/** @brief This module implements the generation and display of all algorithms in a basic version.   
  * @file randomizer_8_16_64.c
- * for doxy
- * 
  * 
  */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
 
-//STDOUT Color
+/** @brief Define special \c stdout color */
 #define COLOR "\033[0;93m"
+/** @brief Setting special \c stdout color back to default */
 #define RESET "\033[0m"
 
+
+
+/** @brief Function produces input (random numbers). 
+ * @param[in] input Array
+ * @param[out] status Success(0)/Fail(1) 
+ * 
+ * Creates random numbers for each of the test arrays.
+ */
 int randomizer_8_16_64(int **input){
     //0. 2 ^ exp = 8, 16, 64
     //1. 2 ^ (3 + 0) = 8
@@ -22,8 +30,6 @@ int randomizer_8_16_64(int **input){
         perror("ERROR: NULL Pointer as Input Value");
         return 1;
     }
-
-    
 
     //Plant rand() seed
     srand(time(NULL));
@@ -47,6 +53,11 @@ int randomizer_8_16_64(int **input){
     return 0;
 }
 
+/** @brief Function produces output printed on @c stdout. 
+ * @param[in] input Array
+ * @param[in] max_cols Number of columns to be printed in one line 
+ * 
+ */
 void show_8_16_64(int **input, int max_cols){
     
     int format_count;
@@ -81,10 +92,13 @@ void show_8_16_64(int **input, int max_cols){
     } 
 }
 
+/** @brief Sub-function frees dynamically allocated memory. 
+ * @param[in] input Array
+ * 
+ */
 void free_8_16_64(int **input){
 
     for(int i = 0; i < 3; i++){
-
         free(input[i]);    
     } 
     free(input);

@@ -1,6 +1,6 @@
-/** Header file for index search module. 
+/** @brief Header file for index search module. 
  * @file search_index.h
- * Detailed description
+ * 
  */
 #ifndef SEARCH_INDEX_H
 #define SEARCH_INDEX_H

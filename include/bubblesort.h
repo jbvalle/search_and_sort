@@ -1,6 +1,6 @@
-/** Header file for bubblesort module. 
+/** @brief Header file for bubblesort module. 
  * @file bubblesort.h
- * Detailed description
+ * 
  */
 
 #ifndef BUBBLESORT_H

@@ -1,6 +1,6 @@
-/** Header file for insertionsort module. 
+/** @brief Header file for insertionsort module. 
  * @file insertionsort.h
- * Detailed description
+ * 
  */
 #ifndef INSERTIONSORT_H
 #define INSERTIONSORT_H

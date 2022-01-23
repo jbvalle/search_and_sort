@@ -12,11 +12,10 @@
  * @param symbol  Number or Character to choose.
  * @param text  Description of menu point.
 */
-struct menu_s {
+typedef struct menu {
     char symbol; 
     char *text; 
-    };
-typedef struct menu_s menu_t;
+    } menu_t;
 
 void show_menu();
 void parse_input();

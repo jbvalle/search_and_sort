@@ -1,7 +1,6 @@
-/** .
+/** @brief Module for the implementation of bubblesort algorithm.
  * @file bubblesort.c
- * for doxy
- *
+ * 
  *
  */
 
@@ -9,6 +8,14 @@
 #include <stdlib.h>
 #include "../include/search_index.h"
 
+
+/**
+ *@brief This function performs the sorting algorithm for an array using bubblesort
+ *@param[in] input Array
+ *@param[in] sizeof_array Number of elements of array
+ *
+ * The algorithm stops the loop when there were no numbers to swap anymore. 
+ */
 void bubblesort(int **input, int sizeof_array){
 
   int index = search_index(sizeof_array);

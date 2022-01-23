@@ -1,5 +1,5 @@
 
-/** @brief Simple program "search and sort algorithms" realized.  
+/** @brief Header file for main module. 
  * @file main.h
  * 
  * 
@@ -7,7 +7,7 @@
  *  
  *  @section sec1 Overview 
  *  This program written in C implements well known sort and search algorithms. 
- *  The following algoritms are implemented:
+ *  The following algorithms are implemented:
  *  -# Bubblesort 
  *  -# Insertionsort
  *  -# Mergesort
@@ -16,6 +16,7 @@
  *  @section sec2 Special features 
  *  -# Menu
  *  -# Colored output on @c stdout.
+ *  -# Each sorting algorithm can be run on its own.
  * 
  * 
  *  
@@ -23,7 +24,7 @@
  *  @date 24.1.2021 
  *  
  *  @version 1.0 
- *  Running version for parts 1.1, 1.2, 1.3, 1.4, 2.1
+ *  Running version for parts 1.1, 1.2, 1.3, 1.4
  * 
  *  @version 0.9 
  *  Added comments (Doxygen).
@@ -34,6 +35,6 @@
 #define MAIN_H
 
 /** Implemented switch for code debugging with macro DEBUG. */
-#define DEBUG 1 //DEBUG_LEVEL
+#define DEBUG 1 //DEBUG_LEVEL for testing
 
 #endif
