@@ -182,7 +182,7 @@ void insertionsort_arr_ll(){
     
     printf("\033[1;93m");
     printf("\n\n+-----------------------------------------------------------------+");
-    printf("\n| RUNTIME-LINKED-LIST[ms]: %2.3fms | RUNTIME-ARRAY[ms]: %2.3fms |", pt_cpu_time_sec[0]*1000., pt_cpu_time_sec[1]*1000.);
+    printf("\n| RUNTIME-LINKED-LIST[ms]: %6.3fms | RUNTIME-ARRAY[ms]: %6.3fms |", pt_cpu_time_sec[0]*1000., pt_cpu_time_sec[1]*1000.);
     printf("\n+-----------------------------------------------------------------+\n");
     printf("\033[0m");
 
