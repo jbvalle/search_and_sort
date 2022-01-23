@@ -1,3 +1,8 @@
+/** @brief Header file for quicksort module.  
+ * @file quicksort.h
+ * 
+ */
+
 #ifndef QUICKSORT_H
 #define QUICKSORT_H
 

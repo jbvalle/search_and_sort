@@ -1,6 +1,6 @@
-/** Header file for random numbers module. 
+/** @brief Header file for random numbers module. 
  * @file randomizer_8_16_64.h
- * Detailed description
+ * 
  */
 #ifndef RANDOMIZER_8_16_64_H
 #define RANDOMIZER_8_16_64_H

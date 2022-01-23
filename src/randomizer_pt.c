@@ -1,7 +1,7 @@
 /** @brief This module implements the performance test of all algorithms. 
  * @file randomizer_pt.c
  * 
- * Includes all functions to perform the performance test.
+ * Includes all functions to perform the performance tests.
  *
  */
 
@@ -25,7 +25,7 @@
 
 
 /** @brief Function produces input (random numbers) for performance check. 
- * @param[in] input Pointer to pointer array to multidimensional int array
+ * @param[in] input Array
  * @param[out] status Success(0)/Fail(1) 
  * 
  * Creates random numbers for each of the test arrays.
@@ -66,7 +66,7 @@ int randomizer_pt(int **input){
 }
 
 /** @brief Function produces output printed on @c stdout. 
- * @param[in] input Pointer to pointer array to multidimensional int array
+ * @param[in] input Aarray
  * @param[in] max_cols Number of columns to be printed in one line 
  * 
  */
@@ -105,12 +105,12 @@ void show_randomizer_pt(int **input, int max_cols){
 }
 
 /** @brief Function produces output printed on @c stdout for specified array
- * @param[in] input Pointer to pointer array to multidimensional int array
- * @param[in] index which indicates which arraysize should be displayed
+ * @param[in] input Array
+ * @param[in] index Index which indicates which arraysize should be displayed
  * @param[in] max_cols Number of columns to be printed in one line 
  * 
  */
-void show_randomizer_pt_index(int **input, int index,int max_cols){
+void show_randomizer_pt_index(int **input, int index, int max_cols){
     
     int format_count, exp = index * 2 + 3;
 
@@ -140,8 +140,8 @@ printf("\n\n  +-----------------------------------+\n");
 }
 
 /** @brief Function produces output printed on @c stdout for specified array
- * @param[in] input Pointer to pointer array to multidimensional int array
- * @param[in] index which indicates which arraysize should be displayed
+ * @param[in] input Array
+ * @param[in] index Index which indicates which arraysize should be displayed
  * @param[in] max_cols Number of columns to be printed in one line 
  * 
  */
@@ -175,7 +175,7 @@ printf("\n\n  +-----------------------------------+\n");
 }
 
 /** @brief Sub-function frees dynamically allocated memory. 
- * @param[in] input Pointer to pointer array to multidimensional int array
+ * @param[in] input Array
  * 
  */
 void free_pt(int **input){
@@ -189,10 +189,10 @@ void free_pt(int **input){
 /** @brief Function shows result of performance check on @c stdout. 
  * @param[out] status Success(0)/Fail(1)
  * 
- * First creates Random Numbers for performance test of array.
+ * First creates random numbers and saves it in array for performance test.
  * Then calls algorithms with input array in random, asc., then desc. order.
  * For asc. order the result of sorting of random numbers is used.
- * Result of asc. order is reversed to serve as input for sorting with desc. order input.
+ * Result of asc. order is reversed to serve as input for sorting with desc. order.
  */
 int perf_test(){
     //Create Random Numbers for performance test of array
@@ -239,7 +239,7 @@ int perf_test(){
 }
 
 /** @brief Sub-function of performance test stepping through each algorithm and each size. 
- * @param[in] begarr_pt Pointer to pointer to int array
+ * @param[in] begarr_pt Array
  * 
  * Clock function measures ticks (not seconds).
  */
@@ -292,6 +292,7 @@ void run_algos(int **begarr_pt) {
         printf("\n");
     }
     free_pt(endarr_pt);
+    //possible implementation with seconds
     //elapsedsec = (double)(end - start)/CLOCKS_PER_SEC;  //Linux gets CPU time, on Windows wall time
     //printf("2Time measured: %d ticks / %.3f seconds.\n", elapsedticks,  elapsedsec);
     
@@ -311,7 +312,7 @@ void reset_values(int **output, int **input, int exp, int i){
 }
 
 /** @brief Sub-function of performance test reversing the order of input array. 
- * @param[in] input Pointer to int array
+ * @param[in] input Array
  * @param[in] index Index number of array (2nd dimension of multidimensional array)
  * @param[in] sizeof_array Number of elements of array
  * 

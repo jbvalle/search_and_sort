@@ -5,6 +5,9 @@
 #ifndef TESTING_H
 #define TESTING_H
 
-void testing();
+void bs();
+void is();
+void ms();
+void qs();
 
 #endif

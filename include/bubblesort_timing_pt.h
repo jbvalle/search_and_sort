@@ -1,4 +1,4 @@
-/**
+/** @brief Header file for bubblesort performance test.
  *@file bubblesort_timing_pt.h
  *
  */
