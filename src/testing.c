@@ -8,9 +8,11 @@
 #include <time.h>
 #include <math.h>
 #include <string.h>
+#include "../include/node_t.h"
 #include "../include/main.h"
 #include "../include/menu.h"
 #include "../include/randomizer_8_16_64.h"
+#include "../include/randomizer_pt.h"
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
 #include "../include/sortcheck.h"
@@ -18,10 +20,13 @@
 #include "../include/search_index.h"
 #include "../include/quicksort.h"
 #include "../include/testing.h"
+#include "../include/bubblesort_timing_pt.h"
+#include "../include/insertion_sort_arr_ll.h"
 
 /** @brief Define \c stdout Color */
 #define COLOR "\033[1;31m"
 #define RESET "\033[0m"
+
 
 /** @brief Function to create and call free dyn. memory as well as call subfunctions for performance test. 
  * @param[in] arg1 First Array Element to be swapped
@@ -45,7 +50,10 @@ void testing(){
     randomizer_8_16_64(input);
      //Show array elements
     show_8_16_64(input, 10); //To display remove Backslashes
-    
+   
+    //==============
+    //Bubblesort
+    //==============
     randomizer_8_16_64(input);
     printf("\n\n");printf(COLOR);printf("+----------------------+\n");
     printf(COLOR);printf("| Sorted by Bubblesort |\n");
@@ -112,4 +120,18 @@ void testing(){
     //Free input arrays
     free_8_16_64(input);
 
+    //Perform Insertion Sort Performance Test Array List
+    insertionsort_arr_ll();
+
+    //Performs bubblesort algorithm on a generated randomized array of size 2000
+    //Subsequently sorting the same set of numbers 20 times and comparing cpu time
+    int randomized[2000];
+
+    srand(time(NULL));
+
+    for(int x = 0; x<2000; x++)
+    {
+        randomized[x] = (double)65536*((double)rand()/(double)RAND_MAX) - 32768.;
+    }
+    bubblesort_timing_pt(randomized);
 }

@@ -5,8 +5,13 @@
 #ifndef RANDOMIZER_PT_H
 #define RANDOMIZER_PT_H
 
+
+#include "node_t.h"
+
 int randomizer_pt(int **input);
 void show_randomizer_pt(int **input, int max_cols);
+void show_randomizer_pt_index(int **input, int index,int max_cols);
+void show_randomizer_pt_list(node_t *input, int index,int max_cols);
 void free_pt(int **input);
 
 int perf_test();
