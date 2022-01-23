@@ -10,6 +10,7 @@
 #include <time.h>
 #include <math.h>
 
+#include "../include/node_t.h"
 #include "../include/bubblesort.h"
 #include "../include/insertionsort.h"
 #include "../include/mergesort.h"
@@ -21,6 +22,7 @@
 #define COLOR "\033[1;31m"
 /** @brief Setting special \c stdout color back to default */
 #define RESET "\033[0m"
+
 
 /** @brief Function produces input (random numbers) for performance check. 
  * @param[in] input Pointer to pointer array to multidimensional int array
@@ -102,6 +104,76 @@ void show_randomizer_pt(int **input, int max_cols){
     } 
 }
 
+/** @brief Function produces output printed on @c stdout for specified array
+ * @param[in] input Pointer to pointer array to multidimensional int array
+ * @param[in] index which indicates which arraysize should be displayed
+ * @param[in] max_cols Number of columns to be printed in one line 
+ * 
+ */
+void show_randomizer_pt_index(int **input, int index,int max_cols){
+    
+    int format_count, exp = index * 2 + 3;
+
+    //Array Bezeichnung
+printf("\n\n  +-----------------------------------+\n");
+    printf("  |   Array with size %5d elements  |\n", (int)pow(2,exp));
+    printf("  +-----------------------------------+\n");
+    //Displays arrays in partitions with added formatting
+    for(int j = 0; j < pow(2,exp);j++){
+        
+        if(j % max_cols == 0){
+            printf("\n");
+            if(j > 0){
+                for(int k = 0; k < max_cols; k++)printf("  +------+");
+                printf("\n");
+            }
+            for(format_count = 0; (format_count < max_cols) && (format_count < pow(2,exp) - j); format_count++)printf("  +------+");
+            printf("\n");
+        }
+        
+        printf("  |");printf(COLOR);
+        printf("%6d",*(input[index] + j));printf(RESET);
+        printf("|");
+    }
+    printf("\n");
+    for(int i = 0; i < format_count; i++)printf("  +------+");
+}
+
+/** @brief Function produces output printed on @c stdout for specified array
+ * @param[in] input Pointer to pointer array to multidimensional int array
+ * @param[in] index which indicates which arraysize should be displayed
+ * @param[in] max_cols Number of columns to be printed in one line 
+ * 
+ */
+void show_randomizer_pt_list(node_t *input, int index,int max_cols){
+    
+    int format_count, exp = index * 2 + 3;
+
+    //Array Bezeichnung
+printf("\n\n  +-----------------------------------+\n");
+    printf("  |   List with size %5d elements   |\n", (int)pow(2,exp));
+    printf("  +-----------------------------------+\n");
+    //Displays arrays in partitions with added formatting
+    for(int j = 0; j < pow(2,exp);j++, input = input->next){
+        
+        if(j % max_cols == 0){
+            printf("\n");
+            if(j > 0){
+                for(int k = 0; k < max_cols; k++)printf("  +------+");
+                printf("\n");
+            }
+            for(format_count = 0; (format_count < max_cols) && (format_count < pow(2,exp) - j); format_count++)printf("  +------+");
+            printf("\n");
+        }
+        
+        printf("  |");printf(COLOR);
+        printf("%6d",input->num);printf(RESET);
+        printf("|");
+    }
+    printf("\n");
+    for(int i = 0; i < format_count; i++)printf("  +------+");
+}
+
 /** @brief Sub-function frees dynamically allocated memory. 
  * @param[in] input Pointer to pointer array to multidimensional int array
  * 
@@ -110,10 +182,7 @@ void free_pt(int **input){
     for(int i = 0; i < 7; i++){
         free(input[i]);
     } 
-    if (input) {
-        free(input);
-        input = NULL;
-    }
+    free(input); 
 }
 
 

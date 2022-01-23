@@ -63,7 +63,7 @@ obj:
 # --verbose: Can tell you about unusual behavior of your program. Repeat for more verbosity.
 memleak_check: $(SRCS)
 	$(CC) $(CFLAGS) -Dmemleak=0 -o $(TARGET) $^ $(LFLAGS)
-	valgrind --leak-check=full  --tool=memcheck ./$(TARGET)
+	valgrind --leak-check=full  --tool=memcheck --track-origins=yes ./$(TARGET)
 
 #Setting ERRFLAG
 errsort: $(SRCS)
