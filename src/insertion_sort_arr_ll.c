@@ -158,7 +158,7 @@ void insertionsort_arr_ll(){
     ///Perform Insertionsort for Linked List
     insertionSort(&head);
     ///Measure Clock at current time
-    cpu_time_clk = clock();
+    cpu_time_clk = clock() - cpu_time_clk;
     pt_cpu_time_sec[0] = (double)cpu_time_clk/(double)CLOCKS_PER_SEC;
     //==============================================
 
@@ -170,7 +170,7 @@ void insertionsort_arr_ll(){
     ///Perform Insertionsort for Array
     insertionsort(input_pt, 2048);
     ///Measure Clock at current time
-    cpu_time_clk = clock();
+    cpu_time_clk = clock() - cpu_time_clk;
     pt_cpu_time_sec[1] = (double)cpu_time_clk/(double)CLOCKS_PER_SEC;
     //==============================================
 
@@ -182,7 +182,7 @@ void insertionsort_arr_ll(){
     
     printf("\033[1;93m");
     printf("\n\n+-----------------------------------------------------------------+");
-    printf("\n| RUNTIME-LINKED-LIST[ms]: %6.3fms | RUNTIME-ARRAY[ms]: %6.3fms |", pt_cpu_time_sec[0]*1000., pt_cpu_time_sec[1]*1000.);
+    printf("\n| RUNTIME-LINKED-LIST[ms]:%7.3fms | RUNTIME-ARRAY[ms]:%7.3fms |", pt_cpu_time_sec[0]*1000., pt_cpu_time_sec[1]*1000.);
     printf("\n+-----------------------------------------------------------------+\n");
     printf("\033[0m");
 
