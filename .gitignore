@@ -7,3 +7,6 @@
 
 #ignore any local settings
 .vscode/settings.json
+
+#ignore doc folder
+doc/
