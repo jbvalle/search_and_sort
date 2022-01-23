@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['search_20and_20sort_20algorithms_0',['Search and sort algorithms',['../index.html',1,'']]]
+  ['ws2021_5fti_5fsorting_5fsearch_5falgorithms_0',['WS2021_TI_Sorting_Search_Algorithms',['../index.html',1,'']]]
 ];

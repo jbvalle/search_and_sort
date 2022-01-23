@@ -24,4 +24,9 @@
 |         \\|//                                                                |
 +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 
+***Instructions:
+Build - make
 
+***Implemented parts: 1.1, 1.2, 1.3, 1.4
+
+***For more details pls check index.html in the /doc-Folder.

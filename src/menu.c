@@ -19,9 +19,12 @@
 #include "../include/bubblesort_timing_pt.h"
 #include "../include/insertion_sort_arr_ll.h"
 
-/** @brief Define \c stdout Color */
+/** @brief Define \c stdout color */
 #define COLOR "\033[1;31m"
+/** @brief Set \c stdout color back to default */
 #define RESET "\033[0m"
+
+
 /** @brief Initializing struct mmenu (main menu) for showing user options */
 menu_t mmenu[] = {
     {'1', "Basic implementation (1.1)"},

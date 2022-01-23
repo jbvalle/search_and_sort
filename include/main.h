@@ -3,7 +3,7 @@
  * @file main.h
  * 
  * 
- * @mainpage Search and sort algorithms 
+ * mainpage Search and sort algorithms 
  *  
  *  @section sec1 Overview 
  *  This program written in C implements well known sort and search algorithms. 
