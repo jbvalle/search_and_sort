@@ -118,4 +118,4 @@
 Authors:
 * Andreas Gelbmann (ic21b066)
 * Martin Kristo (ic21b067)
-* John Bryan Vale (ic21b005)
+* John Bryan Valle (ic21b005)
