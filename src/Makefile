@@ -49,7 +49,7 @@ $(ODIR)/%.o: %.c | obj
 #README
 SHOW_README:
 	@echo "$(COLOR)"
-	@cat ../README.txt
+	@cat ../README.md
 	@echo "$(RESET)"
 
 RUN: 
