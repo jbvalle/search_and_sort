@@ -26,6 +26,13 @@ var NAVTREE =
 [
   [ "WS2021_TI_Sorting_Search_Algorithms", "index.html", [
     [ "Data Structures", "annotated.html", [
+      [ "About The Project", "index.html#autotoc_md0", null ],
+      [ "Getting Started", "index.html#autotoc_md1", [
+        [ "Installation", "index.html#autotoc_md2", null ]
+      ] ],
+      [ "Usage", "index.html#autotoc_md3", null ],
+      [ "Documentation", "index.html#autotoc_md4", null ],
+      [ "Contact", "index.html#autotoc_md5", null ],
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
       [ "Data Fields", "functions.html", [

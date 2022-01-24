@@ -86,10 +86,109 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">WS2021_TI_Sorting_Search_Algorithms </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md_README"></a> +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+ | _ _____ __ | | (_) / ___/___ ____ ___________/ /_ | | |=| __ \/ _ \/ __ `/ ___/ ___/ __ \ | | |=| ___/ / __/ /_/ / / / /__/ / / / | | /|__|_|__|\ /____/___/__,_/_/ ___/_/ /_/ | | ( ( ) ) ___ _____ __ | | |\/"/\/|/ ( _ ) / ___/____ _____/ /_ | | | Y | / __ \/| __ \/ __ \/ ___/ __/ | | | | | / /_/ &lt; ___/ / /_/ / / / /_ | | | | | ____/\/ /____/____/_/ __/__ __ | | _| | | / | / ____ _____ _____(_/ /_/ /_ ____ ___ _____ | | __/ | | |\ / /| | / / __ <code>/ __ \/ ___/ / __/ __ \/ __</code>__ \/ ___/ | | / \ | | | \ / ___ |/ / /_/ / /_/ / / / / /_/ / / / / / / / (__ ) | | __| | | | /_/ |_/_/__, /____/_/ /_/__/_/ /_/_/ /_/ /_/____/ | | /\/ | | | |\ /____/ | | &lt; +\ | |\ /&gt; \ | | &gt; + \ | LJ | | | + |+ \ &lt; \ | | (O) + | ) | | | \ /\ | | ( | ) (o) \/ ) | | _\|//__( | )______)_/ BY: Gelbmann, Kristo, Valle | | \|// | +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+</p>
-<p >***Instructions: Build - make</p>
-<p >***Implemented parts: 1.1, 1.2, 1.3, 1.4</p>
-<p >***For more details pls check index.html in the /doc-Folder. </p>
+<div class="textblock"><p ><a class="anchor" id="md_README"></a> </p><div id="top"></div><p ><br  />
+</p>
+<div align="center"></div><div align="center"><em>This project aims to implement sorting algorithms and demonstrate performance assessments</em> <br  />
+ <br  />
+</div><div align="center"></div><hr  />
+<h2><a class="anchor" id="autotoc_md0"></a>
+About The Project</h2>
+<p ><b>Part 1: (SOLVED)<br  />
+</b></p><ul>
+<li>Create Randomized Array of size 8, 16, 64 generating numbers between -32.768 - 32767 <br  />
+</li>
+<li>Implement following sorting algorithms and sort array increasingly <br  />
+</li>
+<li>Mergesort <br  />
+</li>
+<li>Quicksort <br  />
+</li>
+<li>Bubblesort <br  />
+</li>
+<li>Insertionsort <br  />
+</li>
+<li>Display random and sorted array</li>
+</ul>
+<p ><b>Part 2: (SOLVED)<br  />
+</b></p>
+<ul>
+<li>Generate randomized array of following sizes: 8, 32, 128, 512, 2048, 8192, 32768<br  />
+</li>
+<li>Apply all sorting algorithms and sort in an increasing and ascending fashion<br  />
+</li>
+<li>Perform a performance analysis on all sorting algorithm<br  />
+</li>
+</ul>
+<p ><b>Part 3: (SOLVED)<br  />
+</b></p><ul>
+<li>Perform bubblesort for an array of size 2000 and repeat 20x <br  />
+</li>
+<li>For each cycle start a runtime analysis and compare and parse the result <br  />
+</li>
+<li>Evaluate the minimum, maximum and average runtime values <br  />
+</li>
+</ul>
+<p ><b>Part 4: (SOLVED)<br  />
+</b></p><ul>
+<li>Implement insertionsort for a linked list</li>
+<li>Generate randomized array of size 2048 as well a linked list with 2048 elements holding the same random values <br  />
+</li>
+<li>Perform insertionsort for both datastructures and evaluate their runtime performance as well as their initialization time <br  />
+ <hr  />
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Getting Started</h2>
+<ul>
+<li>Start by generating Binary file: Follow Installation instruction</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2"></a>
+Installation</h3>
+<ul>
+<li>Generate Binary File by executing make in src/ <div class="fragment"><div class="line">make</div>
+</div><!-- fragment --></li>
+</ul>
+<hr  />
+<h2><a class="anchor" id="autotoc_md3"></a>
+Usage</h2>
+<ul>
+<li>The user is able to choose by a different options by interacting with a menu interface <br  />
+</li>
+</ul>
+<table style="width=110%" border="solid black">
+<tr align="left">
+<th>OPTIONS </th><th>DESCRIPTION  </th></tr>
+<tr align="left">
+<th>'1' </th><th>Basic Implementation 1.1 - Generates randomized Arrays and runs all applied sorting algorithms  </th></tr>
+<tr align="left">
+<th>'2' </th><th>Performance Comparison 1.2 - Generates randomized Arrays and feeds all values to all sorting algorihm, subsequently evaluating their sorting performance by calculating individual clock cycles per operations</th><th></th></tr>
+<tr align="left">
+<th>'3' </th><th>Runtime Analysis (Bubblesort) 1.3 - Performs Bubblesort on a set number of random values and each time assessing runtime performance and calculating total max, min and average values  </th></tr>
+<tr align="left">
+<th>'4' </th><th>Runtime Analysis (Insertionsort Array | List) 1.4 - Performs insertionsort on an array and linked list, while assessing individual runtime performance and initialization time  </th></tr>
+<tr align="left">
+<th>Options: '5' - '8' </th><th>The User is able to run each sorting algorithm individually  </th></tr>
+<tr align="left">
+<th>'M' </th><th>Show Options  </th></tr>
+<tr align="left">
+<th>'X' </th><th>Exit  </th></tr>
+</table>
+<hr  />
+<hr  />
+<h2><a class="anchor" id="autotoc_md4"></a>
+Documentation</h2>
+<ul>
+<li>The documentation for the source code is generated by doxygen</li>
+<li>For more details pls check index.html in the /doc-Folder.</li>
+</ul>
+<hr  />
+<h2><a class="anchor" id="autotoc_md5"></a>
+Contact</h2>
+<p >Authors:</p><ul>
+<li>Andreas Gelbmann (ic21b066)</li>
+<li>Martin Kristo (ic21b067)</li>
+<li>John Bryan Valle (ic21b005) </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
