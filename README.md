@@ -29,7 +29,7 @@
 
 <strong>Part 2: (SOLVED)<br /></strong>
 
-* Generate randomized array of follow sizes: 8, 32, 128, 512, 2048, 8192, 32768<br /> 
+* Generate randomized array of following sizes: 8, 32, 128, 512, 2048, 8192, 32768<br /> 
 * Apply all sorting algorithms and sort in an increasing and ascending fashion<br />
 * Perform a performance analysis on all sorting algorithm<br /> 
 
@@ -76,7 +76,7 @@
     </tr>
     <tr ALIGN=LEFT>
         <th>'2'</th>
-        <th>Performance Comparison 1.2 - Generates randomized Arrays and feeds all values to all sorting algorihm, subsequently evaluating their sorting performance by calculating individual cloclock cycles per operations<th>
+        <th>Performance Comparison 1.2 - Generates randomized Arrays and feeds all values to all sorting algorihm, subsequently evaluating their sorting performance by calculating individual clock cycles per operations<th>
     </tr>
     <tr ALIGN=LEFT>
         <th>'3'</th>
