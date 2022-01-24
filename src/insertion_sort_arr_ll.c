@@ -141,18 +141,36 @@ void insertionsort_arr_ll(){
     //===================================================
     //Saves CPU Runtime value of a single function
     double pt_cpu_time_sec[2] = {0, 0};
+    //Saves CPU Init value of a single function
+    double pt_init_time_sec[2] = {0, 0};
+
 
     //Save temporary clocks at current time
     clock_t cpu_time_clk;
+
+    clock_t init_time_clk;
 
     //Allocate HEAD Node for Linked list
     node_t *head = NULL;
     //Allocate Memory for Randomized ARRAY
     int **input_pt = (int **)malloc(7 * sizeof(int *));
+
+    //Measure CPU TIME Iinit for Array
+    init_time_clk = clock();
     randomizer_pt(input_pt);
+    init_time_clk = clock() - init_time_clk;
+
+    pt_init_time_sec[0] = (double)init_time_clk/(double)CLOCKS_PER_SEC;
+
 
     //Fill linked list with values of randomized list of size 2048
+    //Measure CPU TIME Iinit for Linked list
+    init_time_clk = clock();
+    init_time_clk = clock();
     populate_list(&head, input_pt[search_index(2048)], 2048);
+    init_time_clk = clock() - init_time_clk;
+
+    pt_init_time_sec[1] = ((double)init_time_clk/(double)CLOCKS_PER_SEC)+pt_init_time_sec[0];
 
     //==============================================
     //2. INSERTION SORT FOR LINKED LIST 
@@ -188,7 +206,13 @@ void insertionsort_arr_ll(){
     show_randomizer_pt_index(input_pt, search_index(2048),15);
     
     printf("\033[1;93m");
-    printf("\n\n+-----------------------------------------------------------------+");
+  printf("\n\n+---------------------------------------------------------------------+");
+    printf("\n| INIT-TIME-LINKED-LIST[ms]:%7.3fms | INIT-TIME-ARRAY[ms]:%7.3fms |", pt_init_time_sec[1]*1000., pt_init_time_sec[0]*1000.);
+    printf("\n+---------------------------------------------------------------------+\n");
+    printf("\033[0m");
+
+    printf("\033[1;93m");
+    printf("\n+-----------------------------------------------------------------+");
     printf("\n| RUNTIME-LINKED-LIST[ms]:%7.3fms | RUNTIME-ARRAY[ms]:%7.3fms |", pt_cpu_time_sec[0]*1000., pt_cpu_time_sec[1]*1000.);
     printf("\n+-----------------------------------------------------------------+\n");
     printf("\033[0m");

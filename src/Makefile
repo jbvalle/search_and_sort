@@ -37,7 +37,7 @@ CFLAGS = -g -Wall -Wextra -pedantic -I$(IDIR) -std=c99
 LFLAGS= -lm
 
 #define the "all" target
-all: clean SHOW_README $(OBJF) $(TARGET) RUN
+all: clean $(OBJF) $(TARGET) RUN
 
 #target <- objectfiles
 $(TARGET): $(OBJF)
